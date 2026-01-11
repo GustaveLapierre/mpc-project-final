@@ -50,6 +50,7 @@ class MPCControl_roll(MPCControl_base):
             constraints += [self.U.A @ (self.u_var[:, k] + self.u_ref_param) <= self.U.b]
             cost += cp.quad_form(self.x_var[:, k], self.Q)
             cost += cp.quad_form(self.u_var[:, k], self.R)
+            # Cost for the slack variables
             cost += cp.quad_form(self.s_var[:, k], self.S) + self.s * cp.norm1(self.s_var[:, k])
 
         constraints += [self.O_inf.A @ self.x_var[:, -1] <= self.O_inf.b]

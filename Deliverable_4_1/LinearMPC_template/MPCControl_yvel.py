@@ -56,6 +56,7 @@ class MPCControl_yvel(MPCControl_base):
             ]
             cost += cp.quad_form(self.x_var[:, k], self.Q)
             cost += cp.quad_form(self.u_var[:, k], self.R)
+            # Cost for the slack variables
             cost += cp.quad_form(self.s_var[:, k], self.S) + self.s * cp.norm1(self.s_var[:, k])
 
         constraints += [

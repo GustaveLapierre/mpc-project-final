@@ -42,7 +42,6 @@ class NmpcCtrl:
         return x + (k1 + 2 * k2 + 2 * k3 + k4) / 6
 
     def f_d_casadi(self, x, u):
-        """Discrete dynamics using RK4 integration for CASADI variables."""
         return self.rk4(self.f, x, u, self.dt)
 
     def _setup_controller(self) -> None:
