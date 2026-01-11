@@ -1,0 +1,9 @@
+!*ipynb
+!Cartoon_rocket.obj
+__pycache__/
+*.pyc
+.idea/
+.vscode/
+.DS_Store
+env/
+venv/
